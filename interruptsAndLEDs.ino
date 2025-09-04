@@ -6,7 +6,7 @@
 //until every one of them is off. Can be connected to a "gas" and "brake" button that will speed up or slow down the blinking respectively.
 */
 int EXT_INTERRUPT_1 = 2;
-int EXT_INTERRUPT_2 = 3;
+int EXT_INTERRUPT_2 = 3; //Arduino interrupt pins
 
 int LEDs[] = {4, 5, 6, 7};
 
@@ -16,7 +16,7 @@ const int maxDelayCounts = 15624; //1s max
 
 //in gasOn, decrease amount of counts until timer interrupt
 void gasOn() {
-  if (OCR1A >= (minDelayCounts + 100)) OCR1A -= 100; //can you reference OCR1A like this in different interrupts w/o calling it a volatile or something?
+  if (OCR1A >= (minDelayCounts + 100)) OCR1A -= 100; 
 }
 
 //in breakOn, increase amount of counts until timer interrupt
@@ -47,11 +47,11 @@ void setup() {
   pinMode(EXT_INTERRUPT_1, INPUT);
   pinMode(EXT_INTERRUPT_2, INPUT);
 
-  attachInterrupt(digitalPinToInterrupt(EXT_INTERRUPT_1), gasOn, RISING);
+  attachInterrupt(digitalPinToInterrupt(EXT_INTERRUPT_1), gasOn, RISING); //active button effects on rising edge
   attachInterrupt(digitalPinToInterrupt(EXT_INTERRUPT_2), brakeOn, RISING);
 
   timerCompareFlag = false;
-  sei();
+  sei(); //turn on interrupts
   
 }
 
@@ -75,4 +75,3 @@ void loop() {
   }
 
 }
-
