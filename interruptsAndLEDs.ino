@@ -1,6 +1,10 @@
-
-//#include <avr/interrupt.h>
-
+/*Author: Jesus Ledezma
+//Exercise 1 of Assignment 1 
+//EENG 350 SEED Lab (Colorado School of Mines)
+//9/3/2025
+//A script written for the Arduino Uno that will turn on 4 LEDs in order until all of them have lit up and extinguish them in order
+//until every one of them is off. Can be connected to a "gas" and "brake" button that will speed up or slow down the blinking respectively.
+*/
 int EXT_INTERRUPT_1 = 2;
 int EXT_INTERRUPT_2 = 3;
 
@@ -71,3 +75,4 @@ void loop() {
   }
 
 }
+
