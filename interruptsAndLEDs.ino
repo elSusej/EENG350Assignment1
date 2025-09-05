@@ -1,7 +1,7 @@
 /*Author: Jesus Ledezma
 //Exercise 1 of Assignment 1 
 //EENG 350 SEED Lab (Colorado School of Mines)
-//9/3/2025
+//Date of Creation: 9/3/2025
 //A script written for the Arduino Uno that will turn on 4 LEDs in order until all of them have lit up and extinguish them in order
 //until every one of them is off. Can be connected to a "gas" and "brake" button that will speed up or slow down the blinking respectively.
 */
@@ -10,7 +10,7 @@ int EXT_INTERRUPT_2 = 3; //Arduino interrupt pins
 
 int LEDs[] = {4, 5, 6, 7};
 
-volatile bool timerCompareFlag; 
+volatile bool timerCompareFlag; //Volatile used so value is pulled from memory ALWAYS (not cache), as it is being modified by ISRs during main execution
 const int minDelayCounts = 155; //10 ms min
 const int maxDelayCounts = 15624; //1s max
 
