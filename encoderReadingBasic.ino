@@ -1,6 +1,7 @@
 /*Jesus Ledezma
  *Exercise 2 of Assignment 1
  *Date of Creation: 9/4/2025
+ *Script that can be used to read quadrature encoder pattern w/o the use of interrupts
  *Notes: Don't need pullup resitor from Arduino in code, connect + to 5v. Connect DT to APIN (2 in this case), and CLK to BPIN for "proper" CW and CCW
  */
 
